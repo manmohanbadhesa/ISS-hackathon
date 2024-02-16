@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- !Important to make the page responsive in browser dev tools -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="../styles/contact.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <!-- <script src="./scripts/index-page.js" type="module" defer ></script> -->
+  </head>
+  <body>
+    <!-- Heaver Navigation -->
+    <header></header>
+    <main>
+        <section class="contact">
+            <h1 class="contact__title">Get in Touch</h1>
+            <!-- Get in touch form-->
+            <form class="contact__form" id="contact-form">
+                <!-- <div class="contact__image-container"> -->
+                    <img class="contact__image" src="../assets/images/contactus.jpg" alt="Illustration of envelopes on a laptop to indicate emails">
+                <!-- </div> -->
+                <div class="contact__form-container">  
+                  <label for="name" class="contact__label">NAME</label>
+                  <input
+                    class="contact__input"
+                    id="name"
+                    name="contactName"
+                    type="text"
+                    placeholder="Your name"
+                    required
+                  />
+                  <label for="email" class="contact__label">EMAIL</label>
+                  <input
+                    class="contact__input"
+                    id="email"
+                    name="contactEmail"
+                    type="email"
+                    placeholder="Your email address"
+                    required
+                  />
+                  <label for="comment" class="contact__label">COMMENT</label>
+                  <textarea
+                    id="comment"
+                    name="contactText"
+                    class="contact__text"
+                    placeholder="Your message"
+                    required
+                  ></textarea>
+                  <button class="contact__cta-button" type="submit">SEND MESSAGE</button>
+                </div>
+              </form>
+        </section>
+
+    </main>
+    <!-- Footer navigation -->
+    <footer></footer>
+  </body>
