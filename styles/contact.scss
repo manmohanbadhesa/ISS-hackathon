@@ -1,0 +1,118 @@
+@use "./partials/global" as *;
+@use "./partials/variables" as *;
+
+ .contact {
+    margin: 0 5rem;
+  &__title {
+    font-size: 3.75rem;
+    padding-top: $padding-top;
+    padding-bottom: $padding-bottom;
+    color:$color-primary;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.0625rem solid $color-border;
+    border-top: 0.0625rem solid $color-border;
+  }
+
+// //   &__image-container {
+// //     width:100vw;
+// //   }
+  &__image {
+    width: 40%;
+    height:auto;
+    padding: 0 1rem;
+  }
+
+  &__form-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    // padding-bottom: $padding-bottom;
+    justify-content: center;
+    padding: 0 $margin $padding-bottom $margin;
+  }
+
+
+  &__label {
+    margin-bottom: 0.25rem; // 4px on all devices
+    color: $color-secondary;
+    font-weight: $font-weight-demi;
+  }
+
+  &__input {
+    padding: 0.625rem;
+    margin-bottom: $margin; // 16px;
+    height: 1.25rem; // style guide has 2.25 rem but reduced to match the mock up
+    border-radius: 0.25rem;
+    border: 0.0625rem solid $color-border;
+    background-color: $color-alt-light-background;
+
+    font-family: $font-family;
+    font-size: $font-size-body; // 13px
+    color: $color-primary;
+
+    &:focus,
+    &:active {
+      border: 0.0625rem solid $color-primary;
+    }
+
+    &--error {
+      border: 0.0625rem solid $color-error-state;
+    }
+  }
+
+
+  &__text {
+    font-family: $font-family;
+    font-size: $font-size-body; // 13px
+
+    // padding: 0.625rem;
+    padding: 1rem;
+    height: 4.5rem;
+    resize: none;
+    margin-bottom: $margin;
+    background-color: $color-alt-light-background;
+
+    border-radius: 0.25rem;
+    border: 0.0625rem solid $color-border;
+
+    &:active,
+    &:focus {
+      border: 0.0625rem solid $color-primary;
+    }
+    &--error {
+      border: 0.0625rem solid $color-error-state;
+    }
+  }
+
+  &__cta-button {
+    height: 2.5rem;
+    color: $color-tertiary;
+    background-color: $color-primary;
+    border-radius: 0.25rem;
+    border: none;
+    font-weight: $font-weight-demi;
+    font-family: $font-family;
+    font-size: 0.85rem; //to match mock up
+    // font-size: $mobile-font-size-label-button;
+
+    //desktop
+    padding: 0 2rem;
+    width: $button-max-width;
+    align-self: flex-end; 
+    // @include tablet {
+    //   padding: 0 2rem;
+    //   width: $button-max-width;
+    //   align-self: flex-end; // to make the button align to right
+    //   // font-size: $tablet-font-size-label-button;
+    // }
+
+    &:hover,
+    &:focus {
+      background-color: $color-hover-cta;
+    }
+  }
+}

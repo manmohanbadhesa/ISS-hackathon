@@ -1,5 +1,121 @@
 #map {
-     height: 5rem; 
-     width: 50%;
-    padding:3rem;
+    height: 5rem;
+    width: 50%;
+    padding: 3rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.header {
+    background-color: #41424C;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+
+    &__logo {
+        color: white;
     }
+
+    &__navbar {
+        width: 50%;
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    &__item {
+        list-style: none;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: white;
+    }
+
+    .header__link--active {
+        padding-bottom: 0.8rem;
+        border-bottom: 4px solid silver;
+    }
+}
+
+.footer {
+    justify-content: center;
+    padding: auto;
+    padding: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: auto;
+    width: 100%;
+    background-color: #41424C;
+    display: flex;
+    /* This enables flex context for all its children (the flex items) */
+    justify-content: space-between;
+    /* This will space out the flex items evenly */
+    color: white;
+}
+
+.footer__item {
+    justify-content: center;
+    flex: 1;
+    /* This allows each flex item to grow to fill the space */
+    /* Optional: add some padding and borders to see the columns more clearly */
+    padding: auto;
+    text-align: center;
+}
+
+h4,
+image {
+    padding-bottom: 1em;
+}
+
+.footer__image {
+    max-height: 2rem;
+    height: auto;
+}
+
+body,
+html {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive single-column layout for the footer */
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        /* Stack flex items vertically */
+        padding: 1.5rem 0;
+        /* 1.5rem padding at the top and bottom */
+    }
+
+    .footer__item {
+        /* Resetting flex to default since flex-direction column will stack items vertically */
+        margin-bottom: 1rem;
+        /* 1rem gutter between items */
+    }
+
+    /* Remove margin-bottom for the last item to prevent extra space at the bottom */
+    .footer__item:last-child {
+        margin-bottom: 0;
+    }
+}
+
+a {
+    color: inherit;
+    /* Makes the link use the text color of its parent */
+    text-decoration: none;
+    /* Removes underline */
+}
+
+a:hover {
+    font-weight: bold;
+}

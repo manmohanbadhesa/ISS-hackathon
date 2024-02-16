@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/aboutUs.css" />
+    <link rel="stylesheet" href="/styles/main.css" />
+
+    <title>about</title>
+  </head>
+  <body>
+    <section class="team">
+      <h1 class="team__header">Welcome to our Team Presentation</h1>
+
+      <div class="team__conatiner">
+        <div class="team__names">
+          <h3 class="team__subtitle">Sowmya</h3>
+          <h3 class="team__subtitle">Lakshmi</h3>
+          <h3 class="team__subtitle">Sahar</h3>
+          <h3 class="team__subtitle">Manmohan</h3>
+          <h3 class="team__subtitle">Devin</h3>
+        </div>
+
+        <div class="team__presentation">
+          <p class="team_para">
+            We're excited to present our project [ISS-hackathon]. This
+            collaborative effort represents of our team, who have worked
+            tirelessly to display the location of the ISS on a map with leaflet. Our primary objective with
+            this project was to trying to retrieve the latitude and longitude of
+            the International Space Station (ISS) using asynchronous functions
+            and Axios to make HTTP requests to the Open API. We used an API from this link http://open-notify.org/Open-Notify-API/ISS-Location-Now/ . 
+          </p>
+        
+          <p class="team_para">The proplem:
+            We define the lat function as an asynchronous function, but it
+            doesn't return anything therefore, when you console.log(lat), it
+            will just print the function definition, not the latitude. we called
+            the getLongitude() outside of an asynchronous context, so it won't
+            wait for the asynchronous operation to complete before moving on to
+            the next line of code.
+          </p>
+
+          <p class="team_para">
+            Solution: We define getLatLong as an asynchronous function that
+            awaits the latitude and longitude separately before logging both. We
+            call getLatLong() to execute the function and retrieve the latitude
+            and longitude.
+          </p>
+
+          <p class="team_para">
+            Results and Achievements: As a result of our efforts, we've achieved
+            significant outcomes, including the map with the layout loctaion
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

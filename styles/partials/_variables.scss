@@ -1,0 +1,40 @@
+// color variables
+$color-primary: #385A64; // BandSite-Black. Dark text on light background. Dark background color.
+$color-secondary: #0F9C86; // Silver. Seconday text color. Inactive CTA text color.
+$color-tertiary: #ffffff; // White. Light text on dark background. Light background color. Active CTA text color.
+
+$color-hover-cta: #1B2E35; // BandSite-DarkBlack.
+$color-alt-light-background: #fafafa; // Alabaster.
+$color-border: #e1e1e1; // Mercury. Divider line, Form outline.
+$color-error-state: #d22d2d; // Error state
+
+// text styles variables
+$font-weight-regular: 400;
+$font-weight-demi: 600;
+$font-weight-bold: 700;
+
+// $font-family: "AvenirNext", sans-serif;
+$font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+// logo size
+$logo-max-width: 7.5rem; // 120px
+$logo-max-height: 1.25rem; // 20px
+
+// button size
+$button-max-width: 12rem; // 150px
+
+// padding variables
+$padding-top: 1.5rem; // 24px
+$padding-bottom: 1rem; // 16px
+$margin: 1rem; // 16px
+
+// font sizes
+$font-size-header: 3.75rem; // 60px
+$font-size-section-header: 2.25rem; // 36px
+$font-size-sub-header: 1.5rem; // 24px
+$font-size-body: 0.875rem; // 14px
+$font-size-footer: $font-size-body;
+$font-size-label-button: 0.75rem; // 12px
+
+$body-line-height: 1.375rem; // 22px
+$title-line-height: 4.25rem; // 68px

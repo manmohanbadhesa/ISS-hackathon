@@ -1,29 +1,50 @@
-// let map;
+let long = 0;
+let lat = 0;
+let time=0;
 
-// async function initMap() {
-//     // The location of Uluru
-//     const position = { lat: -25.344, lng: 131.031 };
-//     // Request needed libraries.
-//     //@ts-ignore
-//     const { Map } = await google.maps.importLibrary("maps");
-//     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
-//     // The map, centered at Uluru
-//     map = new Map(document.getElementById("map"), {
-//         zoom: 4,
-//         center: position,
-//         mapId: "DEMO_MAP_ID",
-//     });
+const mapComponent = () => {
+    return `
+    <div id="map">
+    </div>
+    `
+}
 
-//     // The marker, positioned at Uluru
-//     const marker = new AdvancedMarkerElement({
-//         map: map,
-//         position: position,
-//         title: "Uluru",
-//     });
-// }
+const dataComponent = (lat, long, time) => {
+    return `
+    <div class="data">
+        <div class="location">
+            <p class="location__latitude">
+            ${lat}
+            </p>
+            <p class="location__longitude">
+            ${long}
+            </p>
+        </div>
+        <div class="time">
+            <p class="time__value>
+            ${time}
+            </p>
+        </div>
+    </div>
+    `
+}
 
-// initMap();
+
+const getTime = async () => {
+    try {
+        const response = await axios.get("http://api.open-notify.org/iss-now.json");
+        // console.log(response);
+        // console.log(response.data.iss_position.latitude);
+        time = response.data.timestamp
+
+        return time
+    }
+    catch (e) {
+        console.log(e);
+    }
+
+}
 
 const getLongitude = async () => {
     try {
@@ -31,13 +52,13 @@ const getLongitude = async () => {
         // console.log(response.data.iss_position.longitude);
         // console.log(response.data.iss_position.latitude);
         long = response.data.iss_position.longitude
-        
+
         return long
     }
-    catch(e) {
+    catch (e) {
         console.log(e);
     }
-    
+
 }
 
 async function getLatitude() {
@@ -48,56 +69,68 @@ async function getLatitude() {
         const lat = response.data.iss_position.latitude
         return lat
     }
-    catch(e) {
+    catch (e) {
         console.log(e);
     }
-    
+
 }
+
+
+const data = async () => {
+    try {
+        long = await getLongitude();
+        lat = await getLatitude();
+        time = await getTime();
+
+        return dataComponent(lat,long, time);
+
+    }
+    catch (e) {
+
+    }
+}
+
+
+
+const Main = async () => {
+    return `
+        <div>
+        ${mapComponent()}
+        ${await data()}
+        </div>
+    `
+}
+
+let root = document.querySelector('main');
+root.innerHTML = Main();
+
+
+
+var map = L.map('map').setView([49.285080, -123.114770], 1);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var pulsingIcon = L.icon.pulse({ iconSize: [5, 5], color: 'red' });
+var marker = L.marker([49.285080, -123.114770], { icon: pulsingIcon }).addTo(map);
 
 const mapping = async () => {
     try {
         long = await getLongitude();
         lat = await getLatitude();
-        console.log(long);
-        console.log(lat);
 
-        var map = L.map('map', {
-            center: [lat, long],
-            zoom: 1
-        });
+        marker.setLatLng([lat, long]).update();
+        map.setView([lat, long]);
 
-        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        }).addTo(map);
 
-        var marker = L.marker([lat, long]).addTo(map);
-
-    } 
-    catch(e) {
+    }
+    catch (e) {
         console.log(e)
     }
 }
 
-mapping();
+setInterval(mapping, 3000);
 
 
-
-
-
-
-// getLocaton();
-
-// var map = L.map('map', {
-//     center: [getLongitude(), getLatitude()],
-//     zoom: 13
-// });
-
-// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//     maxZoom: 19,
-//     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-// }).addTo(map);
-
-// var map = L.map('map').setView([51.505, -0.09], 13);
-
-// console.log("map",map)

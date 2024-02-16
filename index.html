@@ -1,30 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ISS on a Map</title>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <link rel="stylesheet" href="./styles/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="./styles/main.css">
+    <script src="./scripts/L.Icon.Pulse.js"></script>
+    <link rel="stylesheet" href="./styles/L.Icon.Pulse.css" />
+
+
 
 </head>
-<body>
-    <header>
 
+<body>
+    <header class="header">
+        <h2 class="header__logo"></h2>
+        <nav class="header__navbar">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a class="header__link header__link--active" href="./header.html">HOME</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="">ABOUT</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="">CONTACT</a>
+                </li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section>
-            <div id="map">
+        <section class="main">
+            <div class="data">
+                <div class="location">
+                    <p class="location__latitude">
+
+                    </p>
+                    <p class="location__longitude">
+
+                    </p>
+                </div>
+                <div class="time">
+
+                </div>
             </div>
         </section>
     </main>
-    <footer>
-
+    <footer class="footer">
+        <div class="footer__item">
+            <h4>The Angle Brackets(stock team name)</h4>
+            <p>info@anglebrackets.com</p>
+        </div>
+        <div class="footer__item">
+            <image class="footer__image" src="./assets/icons8-linkedin-50.png" alt="LinkedIn Logo"></image>
+            <p><a href="https://www.linkedin.com/in/sowmyamalur/">Sowmya</a></p>
+            <p><a href="https://www.linkedin.com/in/sahar-mahdi-528738261/">Sahar</a></p>
+            <p><a href="https://www.linkedin.com/in/manmohan-singh-badhesa/">Manmohan</a></p>
+            <p><a href="https://www.linkedin.com/in/devin-dellazizzo-toth-40314644/">Devin</a></p>
+            <p><a href="https://www.linkedin.com/in/lakshmikande/">Lakshmi</a></p>
+        </div>
+        <div class="footer__item">
+            <h4>Fork our Repo</h4>
+            <p>https://github.com/manmohanbadhesa/ISS-hackathon</p>
+        </div>
     </footer>
     <script src="./scripts/mapsScript.js"></script>
 </body>
+
 </html>
