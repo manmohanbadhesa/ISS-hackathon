@@ -30,8 +30,9 @@ const getLongitude = async () => {
         const response = await axios.get("http://api.open-notify.org/iss-now.json");
         // console.log(response.data.iss_position.longitude);
         // console.log(response.data.iss_position.latitude);
-
-        return response.data.iss_position.longitude
+        long = response.data.iss_position.longitude
+        
+        return long
     }
     catch(e) {
         console.log(e);
@@ -44,8 +45,8 @@ async function getLatitude() {
         const response = await axios.get("http://api.open-notify.org/iss-now.json");
         // console.log(response.data.iss_position.longitude);
         // console.log(response.data.iss_position.latitude);
-
-        return response.data.iss_position.latitude
+        const lat = response.data.iss_position.latitude
+        return lat
     }
     catch(e) {
         console.log(e);
@@ -53,11 +54,34 @@ async function getLatitude() {
     
 }
 
-const lat = async () => {
-    await getLatitude()
+const mapping = async () => {
+    try {
+        long = await getLongitude();
+        lat = await getLatitude();
+        console.log(long);
+        console.log(lat);
+
+        var map = L.map('map', {
+            center: [lat, long],
+            zoom: 1
+        });
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        var marker = L.marker([lat, long]).addTo(map);
+
+    } 
+    catch(e) {
+        console.log(e)
+    }
 }
-console.log(lat);
-getLongitude();
+
+mapping();
+
+
 
 
 
