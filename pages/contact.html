@@ -7,12 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact</title>
     <link rel="stylesheet" href="../styles/contact.css" />
+    <link rel="stylesheet" href="../styles/main.css">
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="../scripts/contactUs.js" defer ></script>
   </head>
   <body>
     <!-- Heaver Navigation -->
-    <header></header>
+    <header class="header">
+      <h2 class="header__logo">Orbital Odyssey</h2>
+      <nav class="header__navbar">
+          <ul class="header__list">
+              <li class="header__item">
+                  <a class="header__link" href="../index.html">HOME</a>
+              </li>
+              <li class="header__item">
+                  <a class="header__link" href="../pages/about.html">ABOUT</a>
+              </li>
+              <li class="header__item">
+                  <a class="header__link header__link--active" href="../pages/contact.html">CONTACT</a>
+              </li>
+          </ul>
+      </nav>
+  </header>
     <main>
         <section class="contact">
             <h1 class="contact__title">Get in Touch</h1>
@@ -52,8 +68,26 @@
                 </div>
               </form>
         </section>
+        
 
     </main>
     <!-- Footer navigation -->
-    <footer></footer>
+    <footer class="footer">
+      <div class="footer__item">
+          <h4>Orbital Odyssey</h4>
+          <p>info@orbitalodyssey.com</p>
+      </div>
+      <div class="footer__item">
+          <image class="footer__image" src="../assets/icons8-linkedin-50.png" alt="LinkedIn Logo"></image>
+          <p><a href="https://www.linkedin.com/in/sowmyamalur/">Sowmya</a></p>
+          <p><a href="https://www.linkedin.com/in/sahar-mahdi-528738261/">Sahar</a></p>
+          <p><a href="https://www.linkedin.com/in/manmohan-singh-badhesa/">Manmohan</a></p>
+          <p><a href="https://www.linkedin.com/in/devin-dellazizzo-toth-40314644/">Devin</a></p>
+          <p><a href="https://www.linkedin.com/in/lakshmikande/">Lakshmi</a></p>
+      </div>
+      <div class="footer__item">
+          <h4>Fork our Repo</h4>
+          <p>https://github.com/manmohanbadhesa/ISS-hackathon</p>
+      </div>
+  </footer>
   </body>

@@ -3,14 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/aboutUs.css" />
     <link rel="stylesheet" href="/styles/main.css" />
+    
 
     <title>about</title>
   </head>
   <body>
+    <header class="header">
+      <h2 class="header__logo">Orbital Odyssey</h2>
+      <nav class="header__navbar">
+          <ul class="header__list">
+              <li class="header__item">
+                  <a class="header__link" href="../index.html">HOME</a>
+              </li>
+              <li class="header__item">
+                  <a class="header__link header__link--active" href="../pages/about.html">ABOUT</a>
+              </li>
+              <li class="header__item">
+                  <a class="header__link" href="../pages/contact.html">CONTACT</a>
+              </li>
+          </ul>
+      </nav>
+  </header>
     <section class="team">
-      <h1 class="team__header">Welcome to our Team Presentation</h1>
+      <h1 class="team__header">Our Hackathon Story</h1>
 
       <div class="team__conatiner">
         <div class="team__names">
@@ -31,7 +51,7 @@
             and Axios to make HTTP requests to the Open API. We used an API from this link http://open-notify.org/Open-Notify-API/ISS-Location-Now/ . 
           </p>
         
-          <p class="team_para">The proplem:
+          <p class="team_para">The problem:
             We define the lat function as an asynchronous function, but it
             doesn't return anything therefore, when you console.log(lat), it
             will just print the function definition, not the latitude. we called
@@ -54,5 +74,23 @@
         </div>
       </div>
     </section>
+    <footer class="footer">
+      <div class="footer__item">
+          <h4>Orbital Odyssey</h4>
+          <p>info@orbitalodyssey.com</p>
+      </div>
+      <div class="footer__item">
+          <image class="footer__image" src="../assets/icons8-linkedin-50.png" alt="LinkedIn Logo"></image>
+          <p><a href="https://www.linkedin.com/in/sowmyamalur/">Sowmya</a></p>
+          <p><a href="https://www.linkedin.com/in/sahar-mahdi-528738261/">Sahar</a></p>
+          <p><a href="https://www.linkedin.com/in/manmohan-singh-badhesa/">Manmohan</a></p>
+          <p><a href="https://www.linkedin.com/in/devin-dellazizzo-toth-40314644/">Devin</a></p>
+          <p><a href="https://www.linkedin.com/in/lakshmikande/">Lakshmi</a></p>
+      </div>
+      <div class="footer__item">
+          <h4>Fork our Repo</h4>
+          <p>https://github.com/manmohanbadhesa/ISS-hackathon</p>
+      </div>
+  </footer>
   </body>
 </html>

@@ -1,6 +1,45 @@
+@use "../styles/partials/variables" as *;
+@use "../styles/partials/global" as *;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40rem;
+
+    &__title {
+        margin: 2rem;
+        font-size: $font-size-header;
+        color: $color-primary;
+        animation: fadeIn 3s ease-in-out forwards;
+    }
+}
+
+
+
 #map {
-    height: 5rem;
-    width: 50%;
+    height: 25rem;
+    width: 70%;
     padding: 3rem;
 }
 
@@ -20,6 +59,7 @@ body {
     color: white;
 
     &__logo {
+        margin-left: 2rem;
         color: white;
     }
 

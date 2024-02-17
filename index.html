@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>ISS on a Map</title>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="./styles/leaflet.css" />
@@ -19,42 +22,32 @@
 
 <body>
     <header class="header">
-        <h2 class="header__logo"></h2>
+        <h2 class="header__logo"><a href="./index.html">Orbital Odyssey</a></h2>
         <nav class="header__navbar">
             <ul class="header__list">
                 <li class="header__item">
-                    <a class="header__link header__link--active" href="./header.html">HOME</a>
+                    <a class="header__link header__link--active" href="./index.html">HOME</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="">ABOUT</a>
+                    <a class="header__link" href="./pages/about.html">ABOUT</a>
                 </li>
                 <li class="header__item">
-                    <a class="header__link" href="">CONTACT</a>
+                    <a class="header__link" href="./pages/contact.html">CONTACT</a>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
         <section class="main">
-            <div class="data">
-                <div class="location">
-                    <p class="location__latitude">
-
-                    </p>
-                    <p class="location__longitude">
-
-                    </p>
-                </div>
-                <div class="time">
-
-                </div>
+            <h1 class="main__title">ISS location</h1>
+            <div id="map">
             </div>
         </section>
     </main>
     <footer class="footer">
         <div class="footer__item">
-            <h4>The Angle Brackets(stock team name)</h4>
-            <p>info@anglebrackets.com</p>
+            <h4>Orbital Odyssey</h4>
+            <p>info@orbitalodyssey.com</p>
         </div>
         <div class="footer__item">
             <image class="footer__image" src="./assets/icons8-linkedin-50.png" alt="LinkedIn Logo"></image>
@@ -66,7 +59,7 @@
         </div>
         <div class="footer__item">
             <h4>Fork our Repo</h4>
-            <p>https://github.com/manmohanbadhesa/ISS-hackathon</p>
+            <a href="https://github.com/manmohanbadhesa/ISS-hackathon"><img class="footer__image" src="./assets/github-mark-white.png"></a>
         </div>
     </footer>
     <script src="./scripts/mapsScript.js"></script>

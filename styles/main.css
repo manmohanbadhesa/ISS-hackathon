@@ -1,6 +1,42 @@
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.875rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 40rem;
+}
+.main__title {
+  margin: 2rem;
+  font-size: 3.75rem;
+  color: #385A64;
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
 #map {
-  height: 5rem;
-  width: 50%;
+  height: 25rem;
+  width: 70%;
   padding: 3rem;
 }
 
@@ -20,6 +56,7 @@ body {
   color: white;
 }
 .header__logo {
+  margin-left: 2rem;
   color: white;
 }
 .header__navbar {

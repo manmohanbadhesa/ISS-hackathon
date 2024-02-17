@@ -10,25 +10,25 @@ const mapComponent = () => {
     `
 }
 
-const dataComponent = (lat, long, time) => {
-    return `
-    <div class="data">
-        <div class="location">
-            <p class="location__latitude">
-            ${lat}
-            </p>
-            <p class="location__longitude">
-            ${long}
-            </p>
-        </div>
-        <div class="time">
-            <p class="time__value>
-            ${time}
-            </p>
-        </div>
-    </div>
-    `
-}
+// const dataComponent = (lat, long, time) => {
+//     return `
+//     <div class="data">
+//         <div class="location">
+//             <p class="location__latitude">
+//             ${lat}
+//             </p>
+//             <p class="location__longitude">
+//             ${long}
+//             </p>
+//         </div>
+//         <div class="time">
+//             <p class="time__value">
+//             ${time}
+//             </p>
+//         </div>
+//     </div>
+//     `
+// }
 
 
 const getTime = async () => {
@@ -76,37 +76,34 @@ async function getLatitude() {
 }
 
 
-const data = async () => {
-    try {
-        long = await getLongitude();
-        lat = await getLatitude();
-        time = await getTime();
+// const data = async () => {
+//     try {
+//         long = await getLongitude();
+//         lat = await getLatitude();
+//         time = await getTime();
+//         return dataComponent(lat,long, time);
+//     }
+//     catch (e) {
 
-        return dataComponent(lat,long, time);
-
-    }
-    catch (e) {
-
-    }
-}
+//     }
+// }
 
 
 
-const Main = async () => {
-    return `
-        <div>
-        ${mapComponent()}
-        ${await data()}
-        </div>
-    `
-}
+// const Main = async () => {
+//     return `
+//         <div>
+//         ${mapComponent()}
+//         </div>
+//     `
+// }
 
-let root = document.querySelector('main');
-root.innerHTML = Main();
-
+// let root = document.querySelector('main');
+// root.innerHTML = Main();
 
 
-var map = L.map('map').setView([49.285080, -123.114770], 1);
+
+var map = L.map('map').setView([49.285080, -123.114770], 8);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
